@@ -48,6 +48,11 @@ python eval.py
 ```
 You can modify line 99 of ```eval.py``` to switch the decoding strategy. When the beam width is 1, it is equivalent to greedy search.
 
+To generate some examples (image-caption pairs), you can run the following command.
+```
+python vis.py
+```
+
 ## Examples
 
 
