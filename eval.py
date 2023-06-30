@@ -96,7 +96,7 @@ if __name__ == '__main__':
     model_state = torch.load(model_dir)['state_dict']
     captioner.load_state_dict(model_state)
     # Prediction.
-    preds_ = generateCaptions(captioner, test_data_loader)
+    preds_ = generateCaptions(captioner, test_data_loader, beam_width=5)
     test_ann_file = osp.join(data_dir, 'annotations/captions_val2014.json')
     # Language evaluation.
     res_dir_ = './eval_results/%s' % str(datetime.now())[:19].replace(' ', '').replace('-', '').replace(':', '')
