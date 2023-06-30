@@ -79,31 +79,6 @@ def languageEval(preds, annFile, model_id, split, res_dir):
     return out
 
 
-def F1_score(preds, gt, novel):
-    tp, fp, fn = 0, 0, 0
-    df_pred = pd.DataFrame(preds)
-    df_gt = pd.DataFrame(gt)
-    for idx in range(len(df_pred)):
-        img_id = df_pred.loc[idx].image_id
-        pred_cap = df_pred.loc[idx].caption
-        positive = pred_cap.find(novel) > -1
-        anns = df_gt[df_gt.image_id == img_id]
-        len1 = len(anns)
-        if len1 == 0:
-            continue
-        anns = anns[anns.caption.str.contains(novel)]
-        if positive:
-            if len(anns) == len1:
-                tp += 1
-            else:
-                fp += 1
-        if not positive and len(anns) == len1:
-            fn += 1
-    print('-' * 5, 'Novel Object:', novel, '-' * 5)
-    print('tp: %d, fp: %d, fn: %d, F1_score: %.3f' % (tp, fp, fn, tp / (tp + 0.5 * fp + 0.5 * fn)))
-    print('-' * 25)
-
-
 if __name__ == '__main__':
     # Evaluation on Validation Set.
     transform_test = get_transform()
@@ -122,16 +97,8 @@ if __name__ == '__main__':
     captioner.load_state_dict(model_state)
     # Prediction.
     preds_ = generateCaptions(captioner, test_data_loader)
-    test_ann_file = osp.join(data_dir, 'annotations_DCC/captions_val_test2014.json')
+    test_ann_file = osp.join(data_dir, 'annotations/captions_val2014.json')
     # Language evaluation.
     res_dir_ = './eval_results/%s' % str(datetime.now())[:19].replace(' ', '').replace('-', '').replace(':', '')
     output = languageEval(preds_, test_ann_file, '1', 'gen_test2014', res_dir=res_dir_)
-    # F1 score.
-    novel_objects = ['bottle', 'bus', 'couch', 'microwave', 'pizza', 'racket', 'suitcase', 'zebra']
-    for obj in novel_objects:
-        annFile_ = osp.join(
-            data_dir, 'annotations_DCC/captions_split_set_%s_val_test_novel2014.json' % obj
-        )
-        coco_ = COCO(annFile_)
-        gt_ = coco_.dataset['annotations']
-        F1_score(preds_, gt_, obj)
+    
