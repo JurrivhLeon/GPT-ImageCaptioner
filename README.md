@@ -46,7 +46,7 @@ For evaluation, please run this command. The trained model will generate caption
 ```
 python eval.py
 ```
-You can modify line 99 of ```eval.py``` to switch the decoding strategy. When beam width is 1, it is equivalent to greedy search.
+You can modify line 99 of ```eval.py``` to switch the decoding strategy. When the beam width is 1, it is equivalent to greedy search.
 
 ## Examples
 
