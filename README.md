@@ -18,10 +18,11 @@ conda create -n gptcap
 conda activate gptcap
 ```
 
-You also need to install the COCO API to load the data. Please refer to <https://github.com/cocodataset/cocoapi> for details.
+Then you need to install some necessary libraries.
 ```
 pip install -r requirements.txt
 ```
+You also need to install the COCO API to load the data. Please refer to <https://github.com/cocodataset/cocoapi> for details.
 
 ## Dataset
 Please download the MSCOCO 2014 dataset (images and annotations) to directory ```./data```. MSCOCO dataset is pubilcly accessible via <https://cocodataset.org/#download>. Make sure your files are organized as below.
