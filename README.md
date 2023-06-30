@@ -11,7 +11,31 @@ During training, the groundtruth captions are sequentially fed into the attentio
 <img src='figs/beamsearch.png' width='750'/>
 
 ## Environment
+First you need to create a new conda environment and install PyTorch. To select the PyTorch verision which is compatible to your device, please refer to <https://pytorch.org/> for details. I use PyTorch 1.9.1 and torchvision 0.10.1 in my experiment.
 
 ```
+conda create -n gptcap
+conda activate gptcap
+```
 
+You also need to install the COCO API to load the data. Please refer to <https://github.com/cocodataset/cocoapi> for details.
+```
+pip install -r requirements.txt
+```
+
+## Dataset
+Please download the MSCOCO 2014 dataset (images and annotations) to directory ```./data```. MSCOCO dataset is pubilcly accessible via <https://cocodataset.org/#download>. Make sure your files are organized as below.
+```
+./data
+./data/
+```
+
+## Training
+To train a image captioning model, please run the following command. 
+```
+python train.py
+```
+For evaluation, run this command.
+```
+python eval.py
 ```
