@@ -37,11 +37,12 @@ Please download the MSCOCO 2014 dataset (images and annotations) to directory ``
 ```
 
 ## Training
-To train a image captioning model, please run the following command. 
+To train a image captioning model, please run the following command. The trained model is stored in path ```./models/captioner_best.pth```.
 ```
 python train.py
 ```
-For evaluation, run this command.
+
+For evaluation, please run this command. The trained model will generate captions of images in the validation set, and metrics including CIDEr, SPICE and METEOR will be calculated.
 ```
 python eval.py
 ```
