@@ -26,8 +26,13 @@ pip install -r requirements.txt
 ## Dataset
 Please download the MSCOCO 2014 dataset (images and annotations) to directory ```./data```. MSCOCO dataset is pubilcly accessible via <https://cocodataset.org/#download>. Make sure your files are organized as below.
 ```
-./data
 ./data/
+./data/annotations/
+./data/annotations/captions_train2014.json
+./data/annotations/captions_val2014.json
+./data/train2014/
+./data/val2014/
+./data/test2014/
 ```
 
 ## Training
