@@ -54,5 +54,39 @@ python vis.py
 ```
 
 ## Examples
+### Greedy Search
+<p>
+  <img src='test_examples/greedy/113408.png' width='400'/>
+  <img src='test_examples/greedy/163041.png' width='400'/>
+</p>
+<p>
+  <img src='test_examples/greedy/253433.png' width='400'/>
+  <img src='test_examples/greedy/287099.png' width='400'/>
+</p>
+<p>
+  <img src='test_examples/greedy/334769.png' width='400'/>
+  <img src='test_examples/greedy/550597.png' width='400'/>
+</p>
+<p>
+  <img src='test_examples/greedy/407521.png' width='400'/>
+  <img src='test_examples/greedy/365277.png' width='400'/>
+</p>
 
+### Beam Search
+<p>
+  <img src='test_examples/beam/113408.png' width='400'/>
+  <img src='test_examples/beam/163041.png' width='400'/>
+</p>
+<p>
+  <img src='test_examples/beam/253433.png' width='400'/>
+  <img src='test_examples/beam/287099.png' width='400'/>
+</p>
+<p>
+  <img src='test_examples/beam/334769.png' width='400'/>
+  <img src='test_examples/beam/550597.png' width='400'/>
+</p>
+<p>
+  <img src='test_examples/beam/407521.png' width='400'/>
+  <img src='test_examples/beam/365277.png' width='400'/>
+</p>
 
